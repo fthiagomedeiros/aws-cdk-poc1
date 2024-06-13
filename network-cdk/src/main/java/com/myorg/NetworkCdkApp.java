@@ -5,7 +5,7 @@ import software.amazon.awscdk.Environment;
 import software.amazon.awscdk.StackProps;
 
 import java.util.Arrays;
-
+//cdk bootstrap -c environmentName=dev -c accountId=ac -c region=us-east-2
 public class NetworkCdkApp {
 
     public static void main(final String[] args) {
