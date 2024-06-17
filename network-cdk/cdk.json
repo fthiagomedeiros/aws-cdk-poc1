@@ -13,6 +13,9 @@
     ]
   },
   "context": {
+    "applicationName": "network-app",
+    "region": "us-east-2",
+    "accountId": "654654608185",
     "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
     "@aws-cdk/core:checkSecretUsage": true,
     "@aws-cdk/core:target-partitions": [

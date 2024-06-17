@@ -11,8 +11,8 @@ public class NetworkCdkApp {
     public static void main(final String[] args) {
         App app = new App();
 
-        String environmentName = (String) app.getNode().tryGetContext("environmentName");
-        requireNonEmpty(environmentName, "context variable 'environmentName' must not be null");
+        String environmentName = (String) app.getNode().tryGetContext("env");
+        requireNonEmpty(environmentName, "context variable 'env' must not be null");
 
         String accountId = (String) app.getNode().tryGetContext("accountId");
         requireNonEmpty(accountId, "context variable 'accountId' must not be null");
@@ -23,8 +23,9 @@ public class NetworkCdkApp {
         Environment awsEnvironment = makeEnv(accountId, region);
 
         new NetworkCdkStack(app, "NetworkCdkStack", StackProps.builder()
-            .stackName("Network-" + environmentName)
+            .stackName("network-" + environmentName)
             .env(awsEnvironment)
+            .description("This is my network stack")
             .build());
 
         app.synth();
