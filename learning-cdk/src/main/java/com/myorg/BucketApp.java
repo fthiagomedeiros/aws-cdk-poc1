@@ -2,9 +2,8 @@ package com.myorg;
 
 import software.amazon.awscdk.App;
 import software.amazon.awscdk.StackProps;
-//import software.amazon.awscdk.StackProps;
 
-public class NetworkApp {
+public class BucketApp {
 
     public static void main(final String[] args) {
         App app = new App();
@@ -18,10 +17,10 @@ public class NetworkApp {
         String accountId = (String) app.getNode().tryGetContext("accountId");
         requireNonEmpty(accountId, "context variable 'accountId' must not be null");
 
-        new NetworkCdkStack(app,
-            "NetworkAppStack",
+        new BucketStack(app,
+            "BucketS3Stack",
             StackProps.builder()
-                .stackName("network-" + environment)
+                .stackName("bucket-" + environment)
                 .build());
 
         app.synth();

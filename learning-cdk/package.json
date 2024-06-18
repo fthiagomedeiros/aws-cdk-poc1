@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "info": "IMPORTANT NOTE: Please make sure to replace the values inside the cdk.json with your configuration",
-    "bootstrap": "cdk bootstrap --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=-Dexec.mainClass=com.myorg.NetworkApp\"",
+    "bootstrap:bucket": "cdk bootstrap --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.BucketApp\"",
+    "bootstrap:network": "cdk bootstrap --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.NetworkApp\"",
     "network:deploy": "cdk deploy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.NetworkApp\" --require-approval never",
-    "network:destroy": "cdk destroy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.NetworkApp\" --force --require-approval never"
+    "network:destroy": "cdk destroy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.NetworkApp\" --force --require-approval never",
+    "bucket:deploy": "cdk deploy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.BucketApp\" --require-approval never",
+    "bucket:destroy": "cdk destroy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.BucketApp\" --force --require-approval never"
   },
   "devDependencies": {
     "aws-cdk": "2.146.0"
